@@ -6,5 +6,8 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js"
+  },
+  "dependencies": {
+    "serialport": "^13.0.0"
   }
 }
