@@ -1,0 +1,46 @@
+# This is an example configuration file
+# To learn more, see the full config.yaml reference: https://docs.continue.dev/reference
+
+name: WhiteRabbit Neo
+version: 1.0.0
+schema: v1
+
+# Define which models can be used
+# https://docs.continue.dev/customization/models
+models:
+  - name: WhiteRabbitNeo V3 7B
+    provider: ollama
+    model: WhiteRabbitNeo/WhiteRabbitNeo-V3-7B:latest
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 8192
+      temperature: 0.2
+  - name: my gpt-5
+    provider: openai
+    model: gpt-5
+    apiKey: YOUR_OPENAI_API_KEY_HERE
+  - name: qwen2.5-coder 7b
+    provider: ollama
+    model: qwen2.5-coder:7b
+    roles:
+      - apply
+      - autocomplete
+      - chat
+      - edit
+  - name: Claude 4 Sonnet
+    provider: anthropic
+    model: claude-sonnet-4-20250514
+    apiKey: ${{ secrets.ANTHROPIC_API_KEY }}
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 200000
+      maxTokens: 64000
+    capabilities:
+      - tool_use
+      - image_input

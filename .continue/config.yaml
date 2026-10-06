@@ -1,0 +1,15 @@
+name: WhiteRabbit Neo
+version: 1.0.0
+schema: v1
+
+models:
+  - name: WhiteRabbitNeo V3 7B
+    provider: ollama
+    model: WhiteRabbitNeo/WhiteRabbitNeo-V3-7B:latest
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 8192
+      temperature: 0.2
